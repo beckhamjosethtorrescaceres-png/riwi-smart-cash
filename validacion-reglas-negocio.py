@@ -12,3 +12,8 @@ def validar_monto_positivo(monto):
 # validar que el monto no sea mayor al permitido
 def validar_retiro_permitido(saldo_actual, monto_a_retirar):
     """Verifica si hay fondos suficientes."""
+    if monto_a_retirar <= saldo_actual:
+        return True
+    else:
+        print(f"Error: Fondos insuficientes. Tu saldo es ${saldo_actual}.")
+        return False
