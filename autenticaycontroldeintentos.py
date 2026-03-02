@@ -7,7 +7,7 @@ is_valid_atte=True
 #Contador de intentos
 attempts= 0
 
-while is_valid == False and is_valid_atte:
+for i in range (3):
     try:
         name=input("Digite el nombre de usuario: ")
         password=input("Digite su contraseña: ")
@@ -19,10 +19,10 @@ while is_valid == False and is_valid_atte:
             print("Usuario y/o Contraseña inválidos")
             attempts=attempts+1
             print("Te quedan",3-attempts,"intentos")
-        if (attempts==3):
-            is_valid_atte=False
-            print("Superaste la cantidad de intentos permitidos")
     except:
         print("Usuario y/o Contraseña inválidos")
         attempts=attempts+1
         print("Te quedan",3-attempts,"intentos")
+
+if (attempts==3 and is_valid== False):
+    print("Superaste la cantidad de intentos permitidos")
