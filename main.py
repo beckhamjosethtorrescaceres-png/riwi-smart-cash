@@ -29,3 +29,4 @@ while is_valid==False and is_valid_atte==True:
         print("Usuario y/o Contraseña inválidos")
         attempts=attempts+1
         print("Te quedan",3-attempts,"intentos")
+saldo = 1000 
