@@ -1,4 +1,4 @@
-def consultar_saldo(saldo):
+def consultar_s(saldo):
     print("Tu saldo es:", saldo)
 
 

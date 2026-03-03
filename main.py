@@ -1,6 +1,7 @@
+from consultar_saldo import consultar_s
 saldo = 1000
 #Definiendo el nombre de usuario y su contraseña
-user_name = "Riwi"
+user_name = "riwi"
 user_password = 123
 #Bool que valida que el usuario, contraseña y la cantidad de intentos sea menor que 3
 is_valid= False
@@ -29,4 +30,67 @@ while is_valid==False and is_valid_atte==True:
         print("Usuario y/o Contraseña inválidos")
         attempts=attempts+1
         print("Te quedan",3-attempts,"intentos")
-saldo = 1000 
+        if (attempts==3) :
+            print("Superaste la cantidad de intentos permitidos")
+            is_valid_atte= False      
+
+def mostrar_menu():
+    print("\n" + "═" * 45)
+    print("          CAJERO AUTOMÁTICO - MENÚ PRINCIPAL")
+    print("═" * 45)
+    print("  1  →  Consultar saldo")
+    print("  2  →  Retirar dinero")
+    print("  3  →  Depositar dinero")
+    print("  4  →  Salir")
+    print("═" * 45)
+
+
+def consultar_s(saldo):
+
+    # Aquí irá la función real cuando el compañero la termine
+    print("  → Consultando saldo... ")
+
+    print("    Saldo actual:", saldo, "\n")
+
+def retirar_dinero():
+    # Aquí irá la función real de retiro
+    print("  → Iniciando retiro... (pendiente de integración)")
+    print("    Monto a retirar: [en desarrollo]\n")
+
+
+def depositar_dinero():
+    # Aquí irá la función real de depósito
+    print("  → Procesando depósito... (pendiente de integración)")
+    print("    Monto a depositar: [en desarrollo]\n")
+
+
+
+# Programa principal
+print("╔════════════════════════════════════════════╗")
+print("║     BIENVENIDO AL CAJERO AUTOMÁTICO        ║")
+print("╚════════════════════════════════════════════╝\n")
+
+while True:
+    mostrar_menu()
+
+    try:
+        opcion = int(input("  → Tu opción: "))
+        print()  # línea en blanco para mejor lectura
+    except ValueError:
+        print("  ¡Error! Debes ingresar un número (1-5).\n")
+        continue
+
+    if opcion == 1:
+        consultar_s(saldo)
+    elif opcion == 2:
+        retirar_dinero()
+    elif opcion == 3:
+        depositar_dinero()
+    elif opcion == 4:
+        print("  ╔════════════════════════════════════╗")
+        print("  ║   ¡Gracias por usar nuestro cajero!   ║")
+        print("  ║          ¡Vuelve pronto! 👋           ║")
+        print("  ╚════════════════════════════════════╝\n")
+        break
+    else:
+        print("  Opción no válida. Elige entre 1 y 5.\n")
