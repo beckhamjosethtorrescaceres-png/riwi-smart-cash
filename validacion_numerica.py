@@ -7,13 +7,8 @@ def validar_entrada_numerica(entrada):
         float(entrada)
         return True
     except ValueError:
+        print("Error: La entrada tiene que ser numerica.")
         return False
 
-# Que no esté vacío
-def validar_entrada_no_vacia(entrada):
-    if entrada.strip() == "":
-        print("Error: La entrada no puede estar vacía.")
-        return False
-    return True
 
-
+validar_entrada_numerica("")
