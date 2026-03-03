@@ -1,5 +1,5 @@
 #Definiendo el nombre de usuario y su contraseña
-user_name = "Riwi"
+user_name = "riwi"
 user_password = 123
 #Bool que valida que el usuario, contraseña y la cantidad de intentos sea menor que 3
 is_valid= False
