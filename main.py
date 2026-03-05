@@ -2,7 +2,8 @@ from consultar_saldo import consultar_s
 from Retirar import retiro
 from deposito import deposito
 from autenticaycontroldeintentos import validacion
-
+from historial import mostrar_historial
+historial = []
 saldo =1000
 saldoretirado=0
 saldodeposito=0
@@ -45,19 +46,23 @@ while True:
     if opcion == 1:
         print("  → Consultando saldo... ")
         consultar_s(saldo)
+        historial.append(f"consulto :{saldo}")
     elif opcion == 2:
         print("  → Iniciando retiro... ")
         saldoretirado= retiro(saldo)
         saldo=saldoretirado
+        historial.append(f"retiro :{saldo}")
     elif opcion == 3:
         print("  → Iniciando depósito... ")
         saldodeposito=deposito(saldo)
         saldo=saldodeposito
+        historial.append(f"deposito :{saldo}")
     elif opcion == 4:
         print("  ╔════════════════════════════════════╗")
         print("  ║   ¡Gracias por usar nuestro cajero!   ║")
         print("  ║          ¡Vuelve pronto! 👋           ║")
         print("  ╚════════════════════════════════════╝\n")
+        mostrar_historial(historial)
         break
     else:
         print("  Opción no válida. Elige entre 1 y 5.\n")
