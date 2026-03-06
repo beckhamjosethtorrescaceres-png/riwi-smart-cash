@@ -25,3 +25,7 @@ def validar_entrada_numerica(entrada):
 def validar_retiro_permitido(saldo_actual, monto_a_retirar):
     if monto_a_retirar <= saldo_actual:
         return True
+    
+    else:
+        print (f"Error: Fondos insuficientes. Tu saldo es ${saldo_actual}.")
+        return False
